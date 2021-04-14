@@ -64,6 +64,7 @@ input[type="text"]{
     font-family: var(--font-primary);
     font-size: 1.1rem;
     color: var(--main-font-color);
+    width: 210px;
 }
 
 .search:focus {
