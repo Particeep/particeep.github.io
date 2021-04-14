@@ -31,6 +31,7 @@ header {
     display: flex;
     justify-items: center;
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -149,5 +150,8 @@ input[type="text"]{
     .text-header {
         display: none;
     }
-}
 
+    .logo {
+        margin-right: unset;
+    }
+}
