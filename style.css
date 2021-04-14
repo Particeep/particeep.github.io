@@ -54,6 +54,7 @@ header {
     border: none;
     background: white;
     margin: 3rem auto;
+    width: 210px;
     padding: 1rem;
     border-radius: 30px;
     transition: all 200ms ease-in-out;
