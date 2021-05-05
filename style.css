@@ -52,7 +52,6 @@ header {
     margin: auto;
     background: none;
     border: none;
-    background: white;
     margin: 3rem auto;
     width: 210px;
     padding: 1rem;
@@ -64,10 +63,21 @@ input[type="text"]{
     font-family: var(--font-primary);
     font-size: 1.1rem;
     color: var(--main-font-color);
-    width: 210px;
+    width: 350px;
     -moz-box-sizing:    border-box;
    -webkit-box-sizing: border-box;
     box-sizing:        border-box;
+    background-color: white;
+    background-image: url("img/Loupe.svg");
+    background-repeat: no-repeat;
+    background-size: 1.1rem 1.1rem;
+    background-position-y: center;
+    background-position-x: calc(100% - 1rem);
+    filter: grayscale(100%);
+}
+
+input[type="text"]:focus{
+    filter: grayscale(0%);
 }
 
 .search:focus {
@@ -109,9 +119,12 @@ input[type="text"]{
 }
 
 .header-card {
+    margin: auto;
     height: 125px;
-    width: 100%;
-    object-fit: cover;
+    /* Passer en 100% si object-fit =  cover */
+    width: 75%;
+    /* Passer en cover lorsqu'on mettra des vrais images et pas des logos */
+    object-fit: contain;
     border-radius: 25px 25px 0 0;
 }
 
@@ -151,6 +164,13 @@ input[type="text"]{
     border: 2px solid var(--primary-color)
 }
 
+.soon-card {
+    margin: auto;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
 @media (max-width: 600px) {
     .text-header {
         display: none;
@@ -159,4 +179,9 @@ input[type="text"]{
     .logo {
         margin-right: unset;
     }
+
+    input[type="text"]{
+        width: 250px;
+    }
 }
+
