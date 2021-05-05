@@ -28,10 +28,16 @@ header {
     height: 150px;
     padding-left: 50px;
     padding-right: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-items: center;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
 }
 
@@ -42,9 +48,16 @@ header {
 }
 
 .text-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .search {
@@ -56,6 +69,8 @@ header {
     width: 210px;
     padding: 1rem;
     border-radius: 30px;
+    -webkit-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
 
@@ -64,7 +79,6 @@ input[type="text"]{
     font-size: 1.1rem;
     color: var(--main-font-color);
     width: 350px;
-    -moz-box-sizing:    border-box;
    -webkit-box-sizing: border-box;
     box-sizing:        border-box;
     background-color: white;
@@ -73,20 +87,24 @@ input[type="text"]{
     background-size: 1.1rem 1.1rem;
     background-position-y: center;
     background-position-x: calc(100% - 1rem);
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
 }
 
 input[type="text"]:focus{
-    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
 }
 
 .search:focus {
     outline: none;
-    box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
+            box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
 }
 
 
 .content {
+    display: -ms-grid;
     display: grid;
     max-width: 1600px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
@@ -96,26 +114,36 @@ input[type="text"]:focus{
     padding : 0 2rem;
     margin: auto;
     margin-bottom: 3rem;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .card {
+    display: -ms-grid;
     display: grid;
     grid-auto-columns: auto;
+    -ms-grid-rows: 125px 1.1rem 0.5fr 2.5rem;
     grid-template-rows: 125px 1.1rem 0.5fr 2.5rem;
     width: 100%;
     height: 400px;
     background-color: white;
     border-radius: 25px;
-    align-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
     border: 2px solid #e6e6e6;
     padding-bottom: 0.5rem;
+    -webkit-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
 
 .card:hover{
-    box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
-    transform: translateY(-6px);
+    -webkit-box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
+            box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
+    -webkit-transform: translateY(-6px);
+        -ms-transform: translateY(-6px);
+            transform: translateY(-6px);
 }
 
 .header-card {
@@ -124,7 +152,8 @@ input[type="text"]:focus{
     /* Passer en 100% si object-fit =  cover */
     width: 75%;
     /* Passer en cover lorsqu'on mettra des vrais images et pas des logos */
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     border-radius: 25px 25px 0 0;
 }
 
@@ -139,7 +168,9 @@ input[type="text"]:focus{
     margin-right: 15px;
     border-top: 2px solid #e6e6e6;
     border-bottom: 2px solid #e6e6e6; 
-    align-self: start;
+    -ms-flex-item-align: start; 
+        -ms-grid-row-align: start; 
+        align-self: start;
     padding: 0.5rem 0;
 }
 
@@ -152,8 +183,13 @@ input[type="text"]:focus{
     padding-bottom: 0.5rem;
     border-radius: 15px;
     cursor: pointer;
-    align-self: center;
-    justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -webkit-transition: all ease-in-out 200ms;
+    -o-transition: all ease-in-out 200ms;
     transition: all ease-in-out 200ms;
     text-decoration: none;
 }
@@ -184,4 +220,3 @@ input[type="text"]:focus{
         width: 250px;
     }
 }
-
