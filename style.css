@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'sf-pro';
-    src:    url('https://dl.dropboxusercontent.com/s/cc1cw0101s7a4eh/SF-Pro-Text-Bold.otf?dl=1');
-    src:    url('https://dl.dropboxusercontent.com/s/u83eqx6np264kas/SF-Pro-Text-Medium.otf?dl=1');
-    src:    url('https://dl.dropboxusercontent.com/s/m16y4blxupzvr0o/SF-Pro-Text-Regular.otf?dl=1');
+    src:    url('./font/SF-Pro-Text-Bold.otf');
+    src:    url('./font/SF-Pro-Text-Medium.otf');
+    src:    url('./font/SF-Pro-Text-Regular.otf');
     font-display: fallback;
   }
 
