@@ -60,13 +60,111 @@ header {
             flex-direction: column;
 }
 
+.tab {
+    background-color: #F8F9FB;
+    border-bottom: 1px solid #AEB4BE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding: 5px 0 0 0;
+}
+
+.tab a {
+    text-decoration: none;
+    padding: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-font-color);
+    border-bottom: 3px solid #F8F9FB;
+    transition: all 0.3s ease;
+}
+
+.tab a:hover {
+    border-bottom: 3px solid var(--main-font-color);
+}
+
+.active-tab{
+    border-bottom: 3px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.tab > a:nth-child(1){
+    margin-right: 15px;
+}
+
+.tab > a:nth-child(2){
+    margin-left: 15px;
+}
+
+.config-container {
+    background-color: #F8F9FB;
+    position: sticky;
+    top: -1px;
+    z-index: 100;
+}
+
+.config-resizer {
+    max-width: 1600px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding : 0 2rem;
+}
+
+.chip-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.config-container.isSticky {
+    -webkit-box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
+            box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+  
+  input[type="checkbox"] + label {
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #fff;
+    border:solid 2px var(--main-font-color);
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: var(--main-font-color);
+    margin: 5px 0;
+  }
+  
+  
+  input[type="checkbox"]:checked + label {
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    background-color: var(--primary-color); color: white; border-color:var(--primary-color);
+  }
+  
+
 .search {
     display: block;
     margin: auto;
     background: none;
     border: none;
-    margin: 3rem auto;
-    width: 210px;
+    margin: 3rem 0;
     padding: 1rem;
     border-radius: 30px;
     -webkit-transition: all 200ms ease-in-out;
@@ -102,6 +200,17 @@ input[type="text"]:focus{
             box-shadow: 0 6px 18px 0 rgb(0 0 0 / 10%);
 }
 
+.category-divider {
+    max-width: 1600px;
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    display: block;
+    font-size: larger;
+    color: var(--main-font-color);
+    border-bottom: 2px solid var(--main-font-color);
+    margin-bottom: 4rem;
+}
 
 .content {
     display: -ms-grid;
@@ -109,14 +218,14 @@ input[type="text"]:focus{
     max-width: 1600px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
     grid-auto-rows: auto;
-    place-items: center center;
+    place-items: center start;
     grid-gap: 5rem;
     padding : 0 2rem;
     margin: auto;
     margin-bottom: 3rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    /* -webkit-box-pack: space-between;
+        -ms-flex-pack: space-between;
+            justify-content: space-between; */
 }
 
 .card {
@@ -132,10 +241,17 @@ input[type="text"]:focus{
     -ms-flex-line-pack: justify;
         align-content: space-between;
     border: 2px solid #e6e6e6;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
     -webkit-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
+}
+
+.card-vertical {
+    -ms-grid-rows: 100px 1.1rem 2.5rem;
+    grid-template-rows: 125px 1.1rem 2.5rem;
+    height: 250px;
+    text-align: center;
 }
 
 .card:hover{
@@ -144,6 +260,10 @@ input[type="text"]:focus{
     -webkit-transform: translateY(-6px);
         -ms-transform: translateY(-6px);
             transform: translateY(-6px);
+}
+
+.hide-card {
+    display: none;
 }
 
 .header-card {
@@ -159,7 +279,7 @@ input[type="text"]:focus{
 
 .title-card{
     font-size: 1.1rem;
-    margin-left: 20px;
+    margin: 0 20px;
 }
 
 .content-card{
@@ -218,5 +338,15 @@ input[type="text"]:focus{
 
     input[type="text"]{
         width: 250px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .chip-container {
+        display: none;
+    }
+
+    .config-resizer {
+        justify-content: center;
     }
 }
